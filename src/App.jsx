@@ -13,7 +13,6 @@ const App = () => {
 
   const setAuth = boolean => {
     setIsAuthenticated(boolean);
-    console.log(isAuthenticated);
   };
 
   return (

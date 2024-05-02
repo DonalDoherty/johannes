@@ -2,6 +2,7 @@ import { React, Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Login = (setAuth) => {
+    const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
     const [formData, setFormData] = useState({
         email: "",
@@ -19,7 +20,7 @@ const Login = (setAuth) => {
         try {
             const body = { email, password };
 
-            const response = await fetch("http://localhost:3001/login", {
+            const response = await fetch(API_URL+"/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

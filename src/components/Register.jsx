@@ -2,6 +2,7 @@ import { React, Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Register = (setAuth) => {
+    const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -27,7 +28,7 @@ const Register = (setAuth) => {
             }
             const body = { firstName, lastName, email, password, registrationKey };
 
-            const response = await fetch("http://localhost:3001/register", {
+            const response = await fetch(API_URL+"/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
